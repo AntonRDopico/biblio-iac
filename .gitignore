@@ -1,0 +1,19 @@
+# Ignorar o contido de segredos/
+segredos/*
+!segredos/.gitkeep
+
+# Ignorar o contido de copias/
+copias/*
+!copias/.gitkeep
+
+# Ficheiros do sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Ficheiros dos editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
