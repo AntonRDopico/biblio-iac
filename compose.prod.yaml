@@ -17,6 +17,39 @@ services:
         limits:
           cpus: '0.50'
           memory: 256MB
+
+  phpmyadmin:
+    depends_on: !reset []
+    environment:
+      PMA_HOST: ${BD_HOST_PROD}
+      CONTORNO: producion
+    networks: !override
+      - front
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 256MB
+
+
+  copia:
+    depends_on: !reset []
+    environment:
+      BD_HOST: ${BD_HOST_PROD}
+      CONTORNO: producion
+    networks: !override
+      - front
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 256MB
 secrets:
     bd_password:
       file: ./segredos/bd_password_prod.txt
