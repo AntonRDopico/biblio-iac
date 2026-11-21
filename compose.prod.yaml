@@ -1,0 +1,22 @@
+services:
+  bd:
+    profiles: ["bd-local"]
+
+  web:
+    depends_on: !reset []
+    environment:
+      DB_HOST: ${BD_HOST_PROD:?No se encuentra la variable BD_HOST_PROD}
+      CONTORNO: producion
+    networks: !override
+      - front
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 256MB
+secrets:
+    bd_password:
+      file: ./segredos/bd_password_prod.txt
