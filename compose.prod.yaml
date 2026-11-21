@@ -9,8 +9,8 @@ services:
       CONTORNO: producion
     networks: !override
       - front
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
+
+
 
     deploy:
       resources:

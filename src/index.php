@@ -116,7 +116,7 @@ if ($faltan) {
     </form>
 
     <p>Consulta executada: <code><?= h($consulta) ?></code></p>
-    <p><?= count($libros) ?> libros atopados.</p>
+    <p><?= count($libros) ?> libros non catalogo.</p>
 
     <table>
       <tr><th>Título</th><th>Autoría</th><th>Ano</th><th>Biblioteca</th></tr>
