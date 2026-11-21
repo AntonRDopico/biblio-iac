@@ -97,6 +97,6 @@ volumes:
 
 secrets:
   bd_password:
-    file: ./segredos/db_password.txt
+    file: ./segredos/bd_password.txt
   bd_root_password:
-    file: ./segredos/db_root_password.txt
+    file: ./segredos/bd_root_password.txt
